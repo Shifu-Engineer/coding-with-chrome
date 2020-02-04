@@ -1,4 +1,3 @@
-
 /**
  * @fileoverview General config for Coding in Chrome suite.
  *
@@ -19,13 +18,12 @@
  * @author mbordihn@google.com (Markus Bordihn)
  */
 
-
- /**
-  * Default values.
-  * @enum {String}
-  */
+/**
+ * Default values.
+ * @enum {String}
+ */
 export const Default = {
-  LANGUAGE: 'eng',
+  LANGUAGE: 'eng'
 };
 
 /**

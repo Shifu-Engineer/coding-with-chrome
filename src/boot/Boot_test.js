@@ -1,5 +1,5 @@
 /**
- * @fileoverview Main Script for the Coding with Chrome suite.
+ * @fileoverview Bootscript for the Coding with Chrome suite.
  *
  * @license Copyright 2020 The Coding with Chrome Authors.
  *
@@ -18,6 +18,10 @@
  * @author mbordihn@google.com (Markus Bordihn)
  */
 
-import { boot } from './boot/Boot';
+import { boot } from './Boot';
 
-boot();
+describe('boot', function() {
+  it('Should be a object ...', function() {
+    expect(typeof boot).toEqual('Object');
+  });
+});

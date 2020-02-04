@@ -25,5 +25,5 @@ export const RunLevel = {
   ONLINE_MODE: 3,
   OFFLINE_GUI_MODE: 4,
   ONLINE_GUI_MODE: 5,
-  REBOOT: 6,
+  REBOOT: 6
 };

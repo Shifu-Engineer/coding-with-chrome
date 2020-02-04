@@ -1,5 +1,5 @@
 /**
- * @fileoverview Service Worker for the Coding with Chrome suite.
+ * @fileoverview Karma Config for the Coding with Chrome suite.
  *
  * @license Copyright 2020 The Coding with Chrome Authors.
  *
@@ -18,6 +18,25 @@
  * @author mbordihn@google.com (Markus Bordihn)
  */
 
-setInterval(() => {
-  console.log('Service Worker ...');
-}, 1000);
+module.exports = config => {
+  config.set({
+    browsers: ['Chrome'],
+    singleRun: true,
+    frameworks: ['mocha'],
+    files: [
+      { pattern: 'src/*_test.js', watched: false },
+      { pattern: 'src/**/*_test.js', watched: false }
+    ],
+    preprocessors: {
+      'src/*_test.js': ['webpack', 'sourcemap'],
+      'src/**/*_test.js': ['webpack', 'sourcemap']
+    },
+    reporters: ['dots'],
+    webpack: {
+      devtool: 'inline-source-map'
+    },
+    webpackServer: {
+      noInfo: true
+    }
+  });
+};

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Main Script for the Coding with Chrome suite.
+ * @fileoverview Service Worker for the Coding with Chrome suite.
  *
  * @license Copyright 2020 The Coding with Chrome Authors.
  *
@@ -18,6 +18,25 @@
  * @author mbordihn@google.com (Markus Bordihn)
  */
 
-import { boot } from './boot/Boot';
+let assetsCache = {};
 
-boot();
+setInterval(() => {
+  if (assetsCache !== serviceWorkerOption.assets) {
+    assetsCache = serviceWorkerOption.assets;
+    console.log('New assets', assetsCache);
+  }
+}, 1000);
+
+self.addEventListener('install', function(event) {
+  console.log('Install service worker ...');
+  event.waitUntil(
+    caches.open('v1').then(function(cache) {
+      return cache.addAll(serviceWorkerOption.assets);
+    })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+  console.log('Fetch request', event);
+  event.respondWith(caches.match(event.request));
+});

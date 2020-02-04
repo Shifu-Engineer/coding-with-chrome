@@ -25,11 +25,17 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-import { Config, Version } from '../config/Config';
+import { Version } from '../config/Config';
 import Logo from '../../assets/svg/logo.svg';
 import styles from './Splash.scss';
 
-class Splash {
+/**
+ * Splash Screen class
+ */
+export class Splash {
+  /**
+   * Shows splash screen.
+   */
   show() {
     console.log('Showing Splashscreen');
     ReactDOM.render(template, document.getElementById('cwc-splash-screen'));
@@ -48,7 +54,3 @@ const template = (
     </Container>
   </React.Fragment>
 );
-
-export default function SimpleContainer() {
-  new Splash().show();
-}

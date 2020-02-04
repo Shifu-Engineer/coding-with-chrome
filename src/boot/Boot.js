@@ -20,21 +20,30 @@
 
 import Splash from '../gui/Splash';
 import runtime from 'serviceworker-webpack-plugin/lib/runtime';
-import { Config, Version } from '../config/Config';
+import { Version } from '../config/Config';
 
-export function Boot() {
+/**
+ * Boot sequence.
+ */
+export function boot() {
   console.log('Booting Coding with Chrome suite', Version);
   console.log('Initialize platform ...');
   if ('serviceWorker' in navigator) {
-    const registration = runtime.register().then(function(registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
+    runtime.register().then(
+      function(registration) {
+        console.log(
+          'ServiceWorker registration successful with scope: ',
+          registration.scope
+        );
+      },
+      function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      }
+    );
   }
   console.log('Switch run level ...');
   console.log('Showing splash screen');
-  Splash();
+  new Splash();
   console.log('Initialize built-in drivers ...');
   console.log('Mount file-system ...');
   console.log('Starting built-in services ...');

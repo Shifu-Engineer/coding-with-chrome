@@ -1,12 +1,9 @@
-﻿Credits
-========
+﻿# Credits
 
-* [Material Design Icons](#material-design-icons)
-* [Roboto Font](#roboto-font)
+- [Material Design Icons](#material-design-icons)
+- [Roboto Font](#roboto-font)
 
-
-Material Design icons
-----------------------
+## Material Design icons
 
 <https://google.github.io/material-design-icons/>
 
@@ -19,9 +16,7 @@ documentation in your products.
 <https://creativecommons.org/licenses/by/4.0/>
 ```
 
-
-Roboto Font
-------------
+## Roboto Font
 
 <https://www.google.com/fonts/specimen/Roboto>
 Christian Robertson

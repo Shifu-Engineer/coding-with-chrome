@@ -1,10 +1,8 @@
-Build Coding with Chrome Suite
-===============================
+# Build Coding with Chrome Suite
 
 <img src="static_files/images/cwc_logo.png" align="right">
 
-What you need to build the Coding with Chrome Suite
-----------------------------------------------------
+## What you need to build the Coding with Chrome Suite
 
 In order to build the Coding with Chrome App, you only need to have Node.js/npm
 and GIT installed on your system.
@@ -17,13 +15,11 @@ platforms like Mac OS X as well.
 
 Install Node.js from the official web page at <https://nodejs.org>
 
-* Optional, if not already installed
-  * Install git from the official web page at <https://git-scm.com/>
-  * Install Google Chrome browser at <https://google.com/chrome>
+- Optional, if not already installed
+  - Install git from the official web page at <https://git-scm.com/>
+  - Install Google Chrome browser at <https://google.com/chrome>
 
-
-How to build your own Coding with Chrome Suite
------------------------------------------------
+## How to build your own Coding with Chrome Suite
 
 ### Get the sources
 

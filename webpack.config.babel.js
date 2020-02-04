@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 import path from 'path';
 import webpack from 'webpack';
@@ -53,13 +54,20 @@ module.exports = {
       description: 'Educational Coding Development Environment',
       start_url: 'index.html',
       display: 'standalone',
-      icons: [{
-        src: path.resolve('assets/icons/128x128.png'),
-        sizes: [96, 128, 192, 256, 384, 512]
-      }]
+      icons: [
+        {
+          src: path.resolve('assets/icons/128x128.png'),
+          sizes: [96, 128, 192, 256, 384, 512]
+        }
+      ]
     }),
     new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, 'src/service_worker.js'),
+      entry: path.join(__dirname, 'src/service-worker.js'),
+      filename: 'service-worker.js'
     }),
+    new FaviconsWebpackPlugin({
+      logo: 'assets/icons/128x128.png',
+      inject: true
+    })
   ]
 };
